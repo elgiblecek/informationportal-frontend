@@ -1,0 +1,53 @@
+.bgcolor{
+    background-color: black;
+    /* width: 100%; */
+}
+.landingimg{
+    width: auto;
+    height: 500px;
+    
+
+   
+}
+.middle{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box{
+    padding: 1.5rem;
+    width: 160px;
+    height: 250px;
+    /* background-color: rgb(247, 240, 240); */
+    background-color: black;
+    border-radius: 1.3rem;
+    
+    /* background-image: url('../../assets/form.png'); */
+
+}
+.justifyaround{
+    display: flex;
+    justify-content: space-around;
+}
+.formimg{
+    border-style: ridge;
+   
+    border-color: #1F7C55;
+}
+.buttionclass{
+    /* position: absolute; */
+    margin-bottom: 1rem;
+    /* background: black; */
+    border-radius: 10px;
+    color: #9f1a65;
+    /* right: 30px;
+    top: 10px; */
+    padding: 0 10px;
+    line-height: 50px;
+    font-size: 18px;
+    bottom: 1px;
+}
+.landingpagebtn{
+    background-color: #1F7C55;
+    color: #2BAA74;
+}

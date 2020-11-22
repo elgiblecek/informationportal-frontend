@@ -1,0 +1,47 @@
+
+<div class=" section bgcolor" style="height: 100vh;">
+    <div class="row">
+      <div class="col-sm-8">
+      <div style="padding: 2rem; background-color: #124630;border-radius: 14px;">
+        
+
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" class="lightcolor" >No.</th>
+                <th scope="col" class="lightcolor">Name</th>
+                <th scope="col" class="lightcolor">Gender</th>
+                <th scope="col" class="lightcolor">Email</th>
+                <button (click)="sortby()">Sortby Name</button>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of dataSource">
+                <th scope="row" class="lightcolor">{{item.id}}</th>
+                <td class="lightcolor">{{item.name}}</td>
+                <td class="lightcolor">{{item.gender}}</td>
+                <td class="lightcolor">{{item.email}}</td>
+              </tr>
+             
+             
+            </tbody>
+          </table>
+          
+          
+
+
+
+      </div>
+      </div>
+  
+      <div class="col-sm-4">
+  <div style="padding: 2rem; background-color: #124630;border-radius: 14px;">
+          
+      
+      </div>
+      </div>
+    
+      </div>
+    </div>
