@@ -13,7 +13,7 @@ export class HttpService {
 
   constructor(private _http: HttpClient , private _router: Router) {}
 
-  url='https://dashboard.heroku.com/apps/information-portal/';
+  url='https://information-portal.herokuapp.com/';
 private httpOptions = {
   headers: new HttpHeaders()
 };
