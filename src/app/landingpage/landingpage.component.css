@@ -9,6 +9,9 @@
 
    
 }
+.desktopfheight{
+    height: 100vh;
+}
 .middle{
     display: flex;
   align-items: center;
@@ -68,4 +71,19 @@
   .box1{
       margin-left: 1rem;
   }
+  .desktopfheight{
+      height: 100vh;
+  }
+
+  .box{
+    padding: 1rem;
+    width: 160px;
+    height: 250px;
+    /* background-color: rgb(247, 240, 240); */
+    background-color: black;
+    border-radius: 1.3rem;
+    
+    /* background-image: url('../../assets/form.png'); */
+
+}
     }

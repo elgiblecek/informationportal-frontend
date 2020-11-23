@@ -3,8 +3,10 @@
   
       <div style="padding: 2rem; background-color: #124630;border-radius: 14px;   border-style: ridge; border-color: #1F7C55;">
         
-
+        <div class="d-flex">
+        <button [routerLink]="['/']" class="mr-3">Back</button>
         <button (click)="sortby()">Sortby Name</button>
+        </div>
         <table class="table table-striped">
             <thead>
               <tr>
