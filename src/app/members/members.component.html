@@ -1,8 +1,7 @@
 
 <div class=" section bgcolor" style="height: 100vh;">
-    <div class="row">
-      <div class="col-sm-8">
-      <div style="padding: 2rem; background-color: #124630;border-radius: 14px;">
+  
+      <div style="padding: 2rem; background-color: #124630;border-radius: 14px;   border-style: ridge; border-color: #1F7C55;">
         
 
 
@@ -13,16 +12,20 @@
                 <th scope="col" class="lightcolor">Name</th>
                 <th scope="col" class="lightcolor">Gender</th>
                 <th scope="col" class="lightcolor">Email</th>
+                <th scope="col" class="lightcolor">Mobile</th>
+                <th scope="col" class="lightcolor">Message</th>
                 <button (click)="sortby()">Sortby Name</button>
               </tr>
               
             </thead>
             <tbody>
               <tr *ngFor="let item of dataSource">
-                <th scope="row" class="lightcolor">{{item.id}}</th>
-                <td class="lightcolor">{{item.name}}</td>
-                <td class="lightcolor">{{item.gender}}</td>
-                <td class="lightcolor">{{item.email}}</td>
+                <th scope="row" class="lightcolor">{{ item.id }}</th>
+                <td class="lightcolor">{{ item.name | titlecase }}</td>
+                <td class="lightcolor">{{ item.gender }}</td>
+                <td class="lightcolor">{{ item.email }}</td>
+                <td class="lightcolor">{{ item.mobile }}</td>
+                <td class="lightcolor">{{ item.message }}</td>
               </tr>
              
              
@@ -33,15 +36,9 @@
 
 
 
-      </div>
-      </div>
   
-      <div class="col-sm-4">
-  <div style="padding: 2rem; background-color: #124630;border-radius: 14px;">
-          
-      
-      </div>
-      </div>
+     
+ 
     
       </div>
     </div>

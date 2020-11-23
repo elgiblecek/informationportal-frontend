@@ -13,7 +13,7 @@ export class HttpService {
 
   constructor(private _http: HttpClient , private _router: Router) {}
 
-  url='https://information-portal.herokuapp.com/';
+  url='https://dashboard.heroku.com/apps/information-portal/';
 private httpOptions = {
   headers: new HttpHeaders()
 };
@@ -21,27 +21,30 @@ private httpOptions = {
 
 
 getMembers(){
-  
+  this.httpOptions.headers.append('Content-Type', 'application/json');
   return this._http
   .get(this.url+'api/members/',this.httpOptions)
   .pipe(catchError(this.handleError));
 }
 
+addmember(body){
+  this.httpOptions.headers.append('Content-Type', 'application/json');
+  return this._http
+  .post(this.url+'api/members/',body,{responseType: 'text'})
+  .pipe(catchError(this.handleError));
+  
+}
+
 
 private handleError(error: any) {
 
-  if (error.status === 404) {
-        
-    this._router.navigate(['/pagenotfound'])
-   
- }
+  
   console.error("server error:", error);
- 
   if (error.error instanceof Error) {
     const errMessage = error.error.message;
-    
     return Observable.throw(errMessage);
-   
+    // Use the following instead if using lite-server
+    // return Observable.throw(err.text() || 'backend server error');
   }
   return Observable.throw(error || "server error");
 }

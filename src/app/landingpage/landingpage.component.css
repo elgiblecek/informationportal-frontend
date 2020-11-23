@@ -25,6 +25,9 @@
     /* background-image: url('../../assets/form.png'); */
 
 }
+.box1{
+    margin-left: 5rem;
+}
 .justifyaround{
     display: flex;
     justify-content: space-around;
@@ -33,6 +36,11 @@
     border-style: ridge;
    
     border-color: #1F7C55;
+
+    width: 140px;
+    height: 180px;
+     border-radius: 15px;
+     border-color: #1F7C55;
 }
 .buttionclass{
     /* position: absolute; */
@@ -51,3 +59,13 @@
     background-color: #1F7C55;
     color: #2BAA74;
 }
+
+@media (max-width:768px){
+    .landingimg {
+      width: 300px;
+      height: 253px;
+  }
+  .box1{
+      margin-left: 1rem;
+  }
+    }

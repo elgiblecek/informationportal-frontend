@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ChartsModule } from 'ng2-charts';
 import { MaterialElementsModule } from './materialelements/materialelements.module';
 import { CoreModule } from './core/core.module';
 import { LandingPageComponent } from './landingpage/landingpage.component';
@@ -26,7 +26,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MaterialElementsModule,
     CoreModule,
     ReactiveFormsModule,
-     FormsModule
+     FormsModule,
+     ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

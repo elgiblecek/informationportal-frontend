@@ -99,6 +99,12 @@ onSubmitform(){
     message:a.Message
   }
   console.log(body)
+  this._httpService.addmember(body)
+  .subscribe(data=>{
+    console.log(data)
+    this.openSnackBar("successfully added",'')
+    this._router.navigate(['/members'])
+  })
   
 }
    
