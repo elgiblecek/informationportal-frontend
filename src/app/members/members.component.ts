@@ -11,15 +11,30 @@ import { HttpClient,HttpParams } from '@angular/common/http';
 import {MatSnackBar} from '@angular/material/snack-bar';
 // import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { ChartType, ChartOptions } from 'chart.js';
-import { Label } from 'ng2-charts';
-// import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-   
+malenos=0
+femalenos=0
+  // Pie
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  public pieChartLabels: Label[] = ['Male', 'Female'];
+  // public pieChartData: SingleDataSet=[3,5];
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+  public pieChartPlugins = [];
+  
+  pieChartData:any = [
+    { 
+        data: []
+    }
+];
     data;
     
    
@@ -34,7 +49,8 @@ export class MembersComponent implements OnInit {
         d.forEach((item, i) => {
             item.id = i + 1;
           });
-    
+        
+        
 
  
     this.dataSource =  d
@@ -68,15 +84,37 @@ export class MembersComponent implements OnInit {
                 
                 this.data.forEach((item, i) => {
                     item.id = i + 1;
+                    if(item.gender =="female"){
+                      this.femalenos = this.femalenos + 1
+                    }
+                    if(item.gender == "male"){
+                      this.malenos = this.malenos + 1
+                    }
                   });
+                  console.log(this.malenos)
 
+                  this.pieChartData = [this.malenos,this.femalenos]
+                  // this.pieChartData.push(this.malenos)
+                  // this.pieChartData.push(this.femalenos)
                 this.dataSource = this.data
                 console.log(this.dataSource)
                
                 
             })
 
-            
+            monkeyPatchChartJsTooltip();
+            monkeyPatchChartJsLegend();
+
+            // this.dataSource.forEach(element => {
+            //   if(element.gender == "female"){
+            //     this.femalenos = this.femalenos + 1
+            //   }
+            //   else{
+            //     this.malenos = this.malenos + 1
+            //   }
+
+            // });
+            // console.log(this.malenos)
        }
          
        

@@ -1,10 +1,10 @@
 
-<div class=" section bgcolor" style="height: 100vh;">
+<div class=" section bgcolor" >
   
       <div style="padding: 2rem; background-color: #124630;border-radius: 14px;   border-style: ridge; border-color: #1F7C55;">
         
 
-
+        <button (click)="sortby()">Sortby Name</button>
         <table class="table table-striped">
             <thead>
               <tr>
@@ -14,7 +14,7 @@
                 <th scope="col" class="lightcolor">Email</th>
                 <th scope="col" class="lightcolor">Mobile</th>
                 <th scope="col" class="lightcolor">Message</th>
-                <button (click)="sortby()">Sortby Name</button>
+                
               </tr>
               
             </thead>
@@ -40,5 +40,18 @@
      
  
     
+      </div>
+    </div>
+
+    <div >
+      <div style="display: block;">
+        <canvas baseChart 
+          [data]="pieChartData" 
+          [labels]="pieChartLabels" 
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend">
+        </canvas>
       </div>
     </div>
