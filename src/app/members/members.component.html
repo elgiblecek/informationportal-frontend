@@ -1,11 +1,13 @@
 
-<div class=" section bgcolor" >
-  
-      <div style="padding: 2rem; background-color: #124630;border-radius: 14px;   border-style: ridge; border-color: #1F7C55;">
+<div class=" section bgsecondary" >
+    <div class="row">
+      <div class="col-md-8">
+     
+      <div class="memberssect" >
         
         <div class="d-flex">
-        <button [routerLink]="['/']" class="mr-3">Back</button>
-        <button (click)="sortby()">Sortby Name</button>
+        <button [routerLink]="['/']" class="mr-3 backbtn">Back</button>
+        <button (click)="sortby()" class="sortbynamebtn">Sortby Name</button>
         </div>
         <table class="table table-striped">
             <thead>
@@ -43,9 +45,12 @@
  
     
       </div>
-    </div>
+      </div>
+      <div class="col-md-4">
+    
+    
 
-    <div >
+    <div class="mt-4">
       <div style="display: block;">
         <canvas baseChart 
           [data]="pieChartData" 
@@ -56,4 +61,8 @@
           [legend]="pieChartLegend">
         </canvas>
       </div>
+    </div>
+
+    </div>
+    </div>
     </div>

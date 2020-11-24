@@ -1,6 +1,6 @@
 
-<div class="middle section bgcolor" style="height: 100vh;">
-    <div style="width: 300px; padding: 2rem; background-color: #124630;border-radius: 14px;">
+<div class="middle section bgsecondary height-100vh" >
+    <div class="formsect" >
 <form [formGroup]="form"  (ngSubmit)="onSubmitform()">
     <div class="col mb-3 mt-3">
        <input type="text" class="form-control form-controll roundedborder"  formControlName="Name" placeholder="Name">
@@ -8,12 +8,12 @@
 
     <div class="col mb-3">
         <div class="form-check-inline">
-            <label class="form-check-label" style="color: white;">
-              <input type="radio" class="form-check-input" formControlName="Gender" value="male">Male
+            <label class="form-check-label blackfont" >
+              <input type="radio" class="form-check-input " formControlName="Gender" value="male">Male
             </label>
           </div>
           <div class="form-check-inline">
-            <label class="form-check-label" style="color: white;">
+            <label class="form-check-label blackfont" >
               <input type="radio" class="form-check-input" formControlName="Gender" value="female">Female
             </label>
           </div>
@@ -41,7 +41,7 @@
     
     </div>
     </form>
-    <button [routerLink]="['/']" class="mr-3 mt-3">Back</button>
+    <button [routerLink]="['/']" class="mr-3 mt-3 backbtn">Back</button>
     </div>
     
     </div>

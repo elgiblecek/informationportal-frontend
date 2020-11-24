@@ -62,7 +62,9 @@
     background-color: #1F7C55;
     color: #2BAA74;
 }
-
+.secondary-color{
+    color:#2EB47B;
+}
 @media (max-width:768px){
     .landingimg {
       width: 300px;

@@ -3,14 +3,15 @@
     /* width: 100%; */
 }
 .lightcolor{
-    color: #2EB47B;
+    color: black;
 }
 .landingimg{
     width: auto;
     height: 500px;
-    
-
-   
+}
+.sortbynamebtn, .backbtn{
+	color: white;
+	background-color: green;
 }
 .middle{
     display: flex;
@@ -59,6 +60,23 @@ table {
     width: 100%;
   }
 
+  .memberssect{
+	padding: 2rem; 
+	background-color: white;
+	border-radius: 14px;   
+	border-style: ridge; 
+	border-color: #1F7C55;
+  }
+
+  .bgsecondary{
+	background-color: #fcedff;
+  }
+
+  .middle{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   @media 
 only screen and (max-width: 760px),
