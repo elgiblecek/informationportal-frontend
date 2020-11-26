@@ -7,17 +7,17 @@
         
         <div class="d-flex">
         <button [routerLink]="['/']" class="mr-3 backbtn">Back</button>
-        <button (click)="sortby()" class="sortbynamebtn">Sortby Name</button>
+
         </div>
         <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col" class="lightcolor" >No.</th>
-                <th scope="col" class="lightcolor">Name</th>
+                <th scope="col" class="lightcolor"><div class="d-flex"> Name  <span class="ml-1 pointer" (click)="sortby('name')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
                 <th scope="col" class="lightcolor">Gender</th>
-                <th scope="col" class="lightcolor">Email</th>
-                <th scope="col" class="lightcolor">Mobile</th>
-                <th scope="col" class="lightcolor">Message</th>
+                <th scope="col" class="lightcolor"><div class="d-flex"> Email <span class="ml-1 pointer" (click)="sortby('email')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
+                <th scope="col" class="lightcolor"><div class="d-flex">Mobile <span class="ml-1 pointer" (click)="sortmobile()"><i class="fa fa-sort" aria-hidden="true"></i></span></div></th>
+                <th scope="col" class="lightcolor"><div class="d-flex"> Message <span class="ml-1 pointer" (click)="sortby('message')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
                 
               </tr>
               

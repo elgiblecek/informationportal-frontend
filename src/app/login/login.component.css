@@ -1,0 +1,34 @@
+.submitbtn{
+    background-color: #31BC81;
+    width: 150px;
+    height: 30px;
+    border-radius: 26px;
+    color: white;
+}
+.backbtn{
+    background-color: #31BC81;
+    width: 60px;
+    height: 30px;
+    border-radius: 26px;
+    color: black;
+}
+.formsect{
+    width: 300px; 
+    padding: 2rem; 
+    background-color: white;
+    border-radius: 14px;
+}
+
+.height-100vh{
+    height: 100vh;
+}
+.color-white{
+    color: white;
+}
+
+.bgsecondary{
+    background-color: #fcedff;
+}
+.blackfont{
+    color: black;
+}

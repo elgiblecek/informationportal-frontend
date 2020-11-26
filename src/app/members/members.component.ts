@@ -20,6 +20,7 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
 export class MembersComponent implements OnInit {
 malenos=0
 femalenos=0
+
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -37,11 +38,49 @@ femalenos=0
 ];
     data;
     
-   
-    sortby(){
-
-
+    sortmobile(){
+      let data = this.dataSource
+        this.dataSource=[]
+        let mobilearray =[]
+        data.map(item=>{
+          mobilearray.push(item.mobile)
+        })
        
+        
+        let d = mobilearray.sort(function(a,b){
+          return a-b;
+        })
+        let newarraysortedbymobile=[]
+        d.forEach(item=>{
+          data.forEach(element => {
+            if(element.mobile == item){
+              newarraysortedbymobile.push(element)
+            }
+          });
+
+        })
+        d=[]
+        data=[]
+
+
+        
+        
+
+        newarraysortedbymobile.forEach((item, i) => {
+            item.id = i + 1;
+          });
+        
+        
+          this.dataSource = newarraysortedbymobile
+ 
+ 
+        }
+    
+
+    sortby(property){
+
+
+       if(property == 'name'){
         let data = this.dataSource
         this.dataSource=[]
         let d = data.sort(this._sorterService.sort("name"))
@@ -54,15 +93,38 @@ femalenos=0
 
  
     this.dataSource =  d
-    }
-  
-   
-  
-  
- 
-   
+        }
+        if(property == 'email'){
+          let data = this.dataSource
+        this.dataSource=[]
+        let d = data.sort(this._sorterService.sort("email"))
 
-    dataSource
+        d.forEach((item, i) => {
+            item.id = i + 1;
+          });
+        
+        
+
+ 
+    this.dataSource =  d
+        }
+
+        if(property == 'message'){
+          let data = this.dataSource
+        this.dataSource=[]
+        let d = data.sort(this._sorterService.sort("message"))
+
+        d.forEach((item, i) => {
+            item.id = i + 1;
+          });
+        
+        
+
+ 
+    this.dataSource =  d
+        }
+    }
+dataSource
    
   constructor(private _snackBar: MatSnackBar,private titleService: Title,private meta: Meta,private route: ActivatedRoute,
     private _router: Router,private _httpService: HttpService, private _sorterService: SorterService) {
@@ -76,6 +138,8 @@ femalenos=0
 
 
        ngOnInit(){
+
+        this.titleService.setTitle('Information Portal | Memebers'); 
 
             this._httpService.getMembers()
             .subscribe(data=>{
@@ -105,16 +169,7 @@ femalenos=0
             monkeyPatchChartJsTooltip();
             monkeyPatchChartJsLegend();
 
-            // this.dataSource.forEach(element => {
-            //   if(element.gender == "female"){
-            //     this.femalenos = this.femalenos + 1
-            //   }
-            //   else{
-            //     this.malenos = this.malenos + 1
-            //   }
-
-            // });
-            // console.log(this.malenos)
+            
        }
          
        

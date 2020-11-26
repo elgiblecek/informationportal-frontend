@@ -14,6 +14,7 @@ export class HttpService {
   constructor(private _http: HttpClient , private _router: Router) {}
 
   url='https://information-portal.herokuapp.com/';
+  // url='http://localhost:3000/'
 private httpOptions = {
   headers: new HttpHeaders()
 };
@@ -33,6 +34,13 @@ addmember(body){
   .post(this.url+'api/members/',body,{responseType: 'text'})
   .pipe(catchError(this.handleError));
   
+}
+
+login(body){
+  this.httpOptions.headers.append('Content-Type', 'application/json');
+  return this._http
+  .post(this.url+'api/login/',body)
+  .pipe(catchError(this.handleError));
 }
 
 
