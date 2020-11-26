@@ -14,12 +14,7 @@ export class AuthenticationService {
        
     }
 
-    public checkloggedin() {
-        if(localStorage.getItem('token') != null){
-        this.currentUser = JSON.parse(localStorage.getItem('jwttoken'))
-        return this.currentUser;
-        }
-    }
+    
 
     public isAuthenticated(): boolean {
         const token = localStorage.getItem('jwttoken');
