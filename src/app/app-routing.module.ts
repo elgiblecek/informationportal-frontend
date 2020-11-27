@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'members', component: MembersComponent,canActivate: [AuthGuardService]},
   { path: 'form', component: FormPageComponent ,canActivate: [AuthGuardService]},
   { path: 'login', redirectTo:'./login'},
+  { path: 'signup', redirectTo:'./signup'},
   { path: '', pathMatch: 'full',component: LandingPageComponent ,canActivate: [AuthGuardService]}
 ];
 

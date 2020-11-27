@@ -1,68 +1,68 @@
 
-<div class=" section bgsecondary middle" >
-    <div class="row ">
-      <div class="col-md-8">
-     
-      <div class="memberssect" >
-        
-        <div class="d-flex">
-        <button [routerLink]="['/']" class="mr-3 backbtn">Back</button>
+  <div class=" section bgsecondary middle" >
+      <div class="row ">
+        <div class="col-md-8">
+      
+        <div class="memberssect" >
+          
+          <div class="d-flex">
+          <button [routerLink]="['/']" class="mr-3 backbtn">Back</button>
 
-        </div>
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col" class="lightcolor" >No.</th>
-                <th scope="col" class="lightcolor"><div class="d-flex"> Name  <span class="ml-1 pointer" (click)="sortby('name')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
-                <th scope="col" class="lightcolor">Gender</th>
-                <th scope="col" class="lightcolor"><div class="d-flex"> Email <span class="ml-1 pointer" (click)="sortby('email')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
-                <th scope="col" class="lightcolor"><div class="d-flex">Mobile <span class="ml-1 pointer" (click)="sortmobile()"><i class="fa fa-sort" aria-hidden="true"></i></span></div></th>
-                <th scope="col" class="lightcolor"><div class="d-flex"> Message <span class="ml-1 pointer" (click)="sortby('message')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
+          </div>
+
+          <!---------------- table showing list -------------------------->
+
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col" class="lightcolor" >No.</th>
+                  <th scope="col" class="lightcolor"><div class="d-flex"> Name  <span class="ml-1 pointer" (click)="sortby('name')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
+                  <th scope="col" class="lightcolor">Gender</th>
+                  <th scope="col" class="lightcolor"><div class="d-flex"> Email <span class="ml-1 pointer" (click)="sortby('email')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
+                  <th scope="col" class="lightcolor"><div class="d-flex">Mobile <span class="ml-1 pointer" (click)="sortmobile()"><i class="fa fa-sort" aria-hidden="true"></i></span></div></th>
+                  <th scope="col" class="lightcolor"><div class="d-flex"> Message <span class="ml-1 pointer" (click)="sortby('message')"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span></div></th>
+                  
+                </tr>
                 
-              </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of dataSource">
+                  <th scope="row" class="lightcolor">{{ item.id }}</th>
+                  <td class="lightcolor">{{ item.name | titlecase }}</td>
+                  <td class="lightcolor">{{ item.gender }}</td>
+                  <td class="lightcolor">{{ item.email }}</td>
+                  <td class="lightcolor">{{ item.mobile }}</td>
+                  <td class="lightcolor">{{ item.message }}</td>
+                </tr>
               
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of dataSource">
-                <th scope="row" class="lightcolor">{{ item.id }}</th>
-                <td class="lightcolor">{{ item.name | titlecase }}</td>
-                <td class="lightcolor">{{ item.gender }}</td>
-                <td class="lightcolor">{{ item.email }}</td>
-                <td class="lightcolor">{{ item.mobile }}</td>
-                <td class="lightcolor">{{ item.message }}</td>
-              </tr>
-             
-             
-            </tbody>
-          </table>
-          
-          
+              
+              </tbody>
+            </table>
 
+            <!---------------- table ends         ---------------->
+            
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+      
+      <!----------------- displaying pie chart     -------------------------->
 
+        <div class=" border-pie">
+          <div style="display: block; margin-top: 2rem;">
+            <canvas baseChart 
+              [data]="pieChartData" 
+              [labels]="pieChartLabels" 
+              [chartType]="pieChartType"
+              [options]="pieChartOptions"
+              [plugins]="pieChartPlugins"
+              [legend]="pieChartLegend">
+            </canvas>
+          </div>
+        </div>
 
-  
-     
- 
-    
+        <!---------------------- pie chart ends --------------------------->
+
       </div>
       </div>
-      <div class="col-md-4">
-    
-    
-
-    <div class=" border-pie">
-      <div style="display: block; margin-top: 2rem;">
-        <canvas baseChart 
-          [data]="pieChartData" 
-          [labels]="pieChartLabels" 
-          [chartType]="pieChartType"
-          [options]="pieChartOptions"
-          [plugins]="pieChartPlugins"
-          [legend]="pieChartLegend">
-        </canvas>
       </div>
-    </div>
-
-    </div>
-    </div>
-    </div>

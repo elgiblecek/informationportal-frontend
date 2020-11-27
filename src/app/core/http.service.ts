@@ -15,11 +15,14 @@ export class HttpService {
 
   url='https://information-portal.herokuapp.com/';
   // url='http://localhost:3000/'
-private httpOptions = {
-  headers: new HttpHeaders()
-};
 
 
+  private httpOptions = {
+    headers: new HttpHeaders()
+  };
+
+
+//  to get list items
 
 getMembers(){
   this.httpOptions.headers.append('Content-Type', 'application/json');
@@ -27,6 +30,8 @@ getMembers(){
   .get(this.url+'api/members/',this.httpOptions)
   .pipe(catchError(this.handleError));
 }
+
+//  to post an item
 
 addmember(body){
   this.httpOptions.headers.append('Content-Type', 'application/json');
@@ -36,6 +41,7 @@ addmember(body){
   
 }
 
+//login 
 login(body){
   this.httpOptions.headers.append('Content-Type', 'application/json');
   return this._http
@@ -44,6 +50,14 @@ login(body){
 }
 
 
+//signup 
+signup(body){
+  this.httpOptions.headers.append('Content-Type', 'application/json');
+  return this._http
+  .post(this.url+'api/signup/',body)
+  .pipe(catchError(this.handleError));
+}
+
 private handleError(error: any) {
 
   
@@ -51,8 +65,7 @@ private handleError(error: any) {
   if (error.error instanceof Error) {
     const errMessage = error.error.message;
     return Observable.throw(errMessage);
-    // Use the following instead if using lite-server
-    // return Observable.throw(err.text() || 'backend server error');
+    
   }
   return Observable.throw(error || "server error");
 }

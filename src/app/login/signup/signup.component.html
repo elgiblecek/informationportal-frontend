@@ -4,7 +4,11 @@
         <div class="formsect" >
         
             <form [formGroup]="form"  (ngSubmit)="onSubmitform()">
-                <h3>Login Page</h3>
+                <h3>Signup Page</h3>
+                <div class="col mb-3">
+                    <input type="email" class="form-control form-controll roundedborder"  formControlName="Username" placeholder="Username">
+                </div>
+
                 <div class="col mb-3">
                     <input type="email" class="form-control form-controll roundedborder"  formControlName="Email" placeholder="Email">
                 </div>
@@ -19,9 +23,8 @@
         
                 </div>
             </form>
-            
-            <small>New user? <button  class="smallbtn" [routerLink]="['/signup']">Sign up</button></small> 
-            
+
+            <small>Existing user? <button  class="smallbtn" [routerLink]="['/login']">Login </button></small> 
     
         </div>
         
